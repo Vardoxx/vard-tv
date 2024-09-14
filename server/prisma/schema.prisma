@@ -6,3 +6,33 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+  updateAt  DateTime @updatedAt @map("updated_at")
+
+  email    String  @unique
+  name     String?
+  password String
+
+  @@map("user")
+}
+
+model Video {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  url         String?
+  duration    Int?
+  views       Int?     @default(0)
+  rating      Float?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  storageLocation String?
+  fileSize        Int?
+  fileFormat      String?
+
+  @@map("video")
+}

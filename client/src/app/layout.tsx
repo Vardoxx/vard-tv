@@ -4,7 +4,6 @@ import { Toaster } from 'sonner'
 
 import { SITE_NAME } from '@/constants/seo.constants'
 
-import GeneralLayout from '@/components/general-layout/GeneralLayout'
 import './globals.scss'
 import { Providers } from './providers'
 
@@ -33,8 +32,8 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={`${zen.className}`}>
 				<Providers>
-					<GeneralLayout>{children}</GeneralLayout>
-					<Toaster theme='dark' position='bottom-right' duration={1500} />
+					{children}
+					<Toaster theme='dark' position='bottom-right' duration={3000} />
 				</Providers>
 			</body>
 		</html>

@@ -51,14 +51,4 @@ export class VideoController {
 	async delete(@Param('id') id: string) {
 		return this.videoService.delete(id)
 	}
-
-	@Post('favorite/:id')
-	@HttpCode(200)
-	async addToFavorites(
-		@Param('id') id: string,
-		@Body('userId') userId: string,
-	): Promise<boolean> {
-		const result = await this.videoService.addToFavorites(userId, id)
-		return result
-	}
 }

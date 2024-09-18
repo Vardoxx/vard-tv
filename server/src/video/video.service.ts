@@ -61,6 +61,7 @@ export class VideoService {
 			title: dto.title,
 			description: dto.description,
 			url: dto.url,
+			tizerUrl: dto.tizerUrl,
 			duration: dto.duration,
 			tags: dto.tags,
 		}
@@ -88,6 +89,7 @@ export class VideoService {
 				title: true,
 				description: true,
 				url: true,
+				tizerUrl: true,
 				duration: true,
 				tags: true,
 			},
@@ -110,29 +112,5 @@ export class VideoService {
 		})
 
 		return { success: true, id: id }
-	}
-
-	async addToFavorites(userId: string, videoId: string): Promise<boolean> {
-		const existingFavorite = await this.prisma.favorite.findUnique({
-			where: {
-				userId_videoId: {
-					userId,
-					videoId,
-				},
-			},
-		})
-
-		if (existingFavorite) {
-			return true
-		}
-
-		await this.prisma.favorite.create({
-			data: {
-				userId,
-				videoId,
-			},
-		})
-
-		return true
 	}
 }

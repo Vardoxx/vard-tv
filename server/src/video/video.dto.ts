@@ -11,6 +11,10 @@ export class VideoDto {
 	@IsUrl()
 	url: string
 
+	@IsString()
+	@IsUrl()
+	tizerUrl: string
+
 	@IsNumber()
 	duration: number
 

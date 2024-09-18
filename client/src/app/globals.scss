@@ -2,6 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import '../styles/form.scss';
+
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
@@ -37,9 +39,9 @@ body {
 .general-layout__nav {
 	display: flex;
 	align-items: center;
-	gap: 30px;
 	font-size: 30px;
 	max-width: 1440px;
+	justify-content: space-between;
 	opacity: 0.7;
 	margin: 0 auto;
 	padding: 12px;

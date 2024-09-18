@@ -1,0 +1,94 @@
+form {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 600px;
+	height: min-content;
+	padding: 16px;
+	border-radius: 1rem;
+	margin: 16px;
+	box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.11);
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+	background-color: transparent;
+	border: 1px solid #333;
+	color: #e0e0e0;
+	font-size: 16px;
+	padding: 12px;
+	width: 100%;
+	border-radius: 4px;
+	transition: all 0.3s ease;
+	width: 100%;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus,
+textarea:focus {
+	outline: none;
+	border-color: #00bcd4;
+	box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+}
+
+input.invalid,
+textarea.invalid {
+	border-color: #ff1744;
+	animation: shake 0.82s infinite;
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(1px, 1px) rotate(-3deg);
+	}
+	10% {
+		transform: translate(-1px, -1px) rotate(3deg);
+	}
+	20% {
+		transform: translate(-2px, 0) rotate(-3deg);
+	}
+	30% {
+		transform: translate(1px, 2px) rotate(3deg);
+	}
+	40% {
+		transform: translate(2px, -1px) rotate(-3deg);
+	}
+	50% {
+		transform: translate(-1px, -2px) rotate(3deg);
+	}
+	60% {
+		transform: none;
+	}
+	70% {
+		transform: translate(2px, 2px) rotate(3deg);
+	}
+	80% {
+		transform: translate(-2px, -2px) rotate(-3deg);
+	}
+	90% {
+		transform: translate(2px, -2px) rotate(3deg);
+	}
+	100% {
+		transform: none;
+	}
+}
+
+textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+@media (max-width: 480px) {
+	input,
+	textarea {
+		font-size: 14px;
+		padding: 10px;
+	}
+
+	button[type='submit'] {
+		padding: 10px 20px;
+	}
+}

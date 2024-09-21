@@ -1,9 +1,12 @@
 import GeneralLayout from '@/components/general-layout/GeneralLayout'
+import { SITE_NAME } from '@/constants/seo.constants'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-	title: 'main',
-
+	title: {
+		default: SITE_NAME,
+		template: `%s | ${SITE_NAME}`,
+	},
 	description: 'Best online cinema in the world',
 }
 
